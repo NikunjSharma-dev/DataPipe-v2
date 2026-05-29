@@ -1,0 +1,68 @@
+services:
+
+  # ── One-shot indexer ──────────────────────────────────────────────────────
+  # Scans the inbox, indexes changed files, then exits.
+  # Run with:  docker compose run --rm indexer
+  indexer:
+    build:
+      context: .
+      target: runtime
+    image: datapipe:latest
+    command: ["update", "/home/datapipe/app/examples/01_products.py"]
+    environment:
+      - DATAPIPE_DB=/data/db/datapipe.db
+    volumes:
+      - db_data:/data/db
+      - ./data/inbox:/home/datapipe/data/inbox:ro   # mount your files here
+    profiles: ["tools"]
+
+  # ── Live watcher ─────────────────────────────────────────────────────────
+  # Runs continuously, re-indexing whenever files change in the inbox.
+  # Run with:  docker compose up watcher
+  watcher:
+    build:
+      context: .
+      target: runtime
+    image: datapipe:latest
+    command: ["update", "/home/datapipe/app/examples/01_products.py", "--live"]
+    environment:
+      - DATAPIPE_DB=/data/db/datapipe.db
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - db_data:/data/db
+      - ./data/inbox:/home/datapipe/data/inbox   # read-write so watcher sees new files
+    restart: unless-stopped
+
+  # ── Search / query shell ─────────────────────────────────────────────────
+  # Drop into an interactive shell to run search / sql / stats commands.
+  # Run with:  docker compose run --rm shell
+  shell:
+    build:
+      context: .
+      target: runtime
+    image: datapipe:latest
+    entrypoint: ["python", "-m", "datapipe.cli"]
+    command: ["doctor"]
+    environment:
+      - DATAPIPE_DB=/data/db/datapipe.db
+    volumes:
+      - db_data:/data/db
+      - ./data/inbox:/home/datapipe/data/inbox:ro
+    stdin_open: true
+    tty: true
+    profiles: ["tools"]
+
+  # ── Test runner ───────────────────────────────────────────────────────────
+  # Run with:  docker compose run --rm test
+  test:
+    build:
+      context: .
+      target: runtime
+    image: datapipe:latest
+    entrypoint: ["python", "-m", "pytest"]
+    command: ["tests/", "-v", "--tb=short"]
+    profiles: ["test"]
+
+volumes:
+  db_data:
+    driver: local

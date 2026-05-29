@@ -1,0 +1,21 @@
+name,category,description,price,brand,in_stock
+Sony WH-1000XM5,Electronics,Industry-leading noise cancelling wireless headphones with 30-hour battery life,349.99,Sony,true
+Apple AirPods Pro,Electronics,Active noise cancellation earbuds with spatial audio and MagSafe charging,249.00,Apple,true
+Kindle Paperwhite,Electronics,Waterproof e-reader with 6.8 inch glare-free display and weeks of battery,139.99,Amazon,true
+Samsung 65-inch QLED TV,Electronics,4K QLED smart TV with quantum processor and Alexa built-in,1199.00,Samsung,true
+Dyson V15 Detect,Home Appliances,Cordless vacuum with laser dust detection and LCD screen,749.99,Dyson,false
+Instant Pot Duo,Home Appliances,7-in-1 electric pressure cooker slow cooker rice cooker steamer,99.95,Instant Pot,true
+Roomba i7+,Home Appliances,Robot vacuum with automatic dirt disposal and smart mapping,599.99,iRobot,true
+Nike Air Max 270,Shoes,Lifestyle running shoes with large Air unit and mesh upper,150.00,Nike,true
+Adidas Ultraboost 22,Shoes,Energy-returning running shoes with Primeknit upper,190.00,Adidas,true
+Levi's 501 Original Jeans,Clothing,Classic straight-fit jeans with button fly,69.50,Levi's,true
+North Face Thermoball Jacket,Clothing,Packable insulated jacket with synthetic down alternative,220.00,The North Face,true
+KitchenAid Stand Mixer,Home Appliances,5-quart tilt-head stand mixer with 59 accessories,449.99,KitchenAid,true
+Breville Espresso Machine,Home Appliances,Barista Express espresso machine with built-in grinder,699.95,Breville,false
+Fitbit Sense 2,Electronics,Advanced health smartwatch with stress management and ECG,299.95,Fitbit,true
+Bose QuietComfort 45,Electronics,Wireless noise-cancelling headphones with 24-hour battery,329.00,Bose,true
+Weber Spirit Gas Grill,Outdoor,3-burner propane gas grill with porcelain-enameled grates,599.00,Weber,true
+Yeti Tundra Cooler,Outdoor,Premium hard cooler with rotomolded construction and dry ice capable,325.00,Yeti,true
+Patagonia Down Sweater,Clothing,Lightweight 600-fill-power down jacket with recycled materials,279.00,Patagonia,true
+Theragun Prime,Fitness,Smart percussive therapy device with 5 speeds and Bluetooth,299.99,Therabody,true
+Peloton Bike,Fitness,Indoor exercise bike with 22-inch touchscreen and live classes,1445.00,Peloton,false

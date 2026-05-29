@@ -1,0 +1,20 @@
+# ── Core ─────────────────────────────────────────────────────────────────────
+pandas==2.2.2
+numpy==1.26.4
+xxhash==3.4.1          # fast content fingerprinting (replaces SHA-256)
+watchdog==4.0.1        # real-time file watching (inotify / FSEvents)
+openpyxl==3.1.5        # Excel .xlsx support
+python-dotenv==1.0.1   # .env file loading
+
+# ── Multimodal parsers (all optional at runtime, included in Docker image) ────
+pypdf==4.2.0           # PDF text extraction
+beautifulsoup4==4.12.3 # HTML parsing (strips scripts/styles)
+lxml==5.2.1            # faster bs4 parser backend
+python-docx==1.1.2     # Microsoft Word .docx
+Pillow==10.3.0         # Image loading for OCR
+pytesseract==0.3.10    # Tesseract OCR wrapper (needs tesseract-ocr system lib)
+libcst==1.4.0          # Python AST-aware chunking
+
+# ── Dev / Testing ─────────────────────────────────────────────────────────────
+pytest==8.2.2
+pytest-cov==5.0.0

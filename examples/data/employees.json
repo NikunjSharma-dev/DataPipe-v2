@@ -1,0 +1,14 @@
+[
+  {"id": 1, "name": "Alice Chen", "department": "Engineering", "role": "Senior Software Engineer", "location": "San Francisco", "skills": "Python, Kubernetes, distributed systems, data pipelines", "years_exp": 8},
+  {"id": 2, "name": "Bob Martinez", "department": "Engineering", "role": "Data Engineer", "location": "Austin", "skills": "Spark, Airflow, dbt, SQL, Python", "years_exp": 5},
+  {"id": 3, "name": "Carol White", "department": "Product", "role": "Product Manager", "location": "New York", "skills": "roadmap planning, user research, Jira, analytics", "years_exp": 7},
+  {"id": 4, "name": "David Kim", "department": "Engineering", "role": "ML Engineer", "location": "Seattle", "skills": "PyTorch, TensorFlow, model deployment, MLflow", "years_exp": 6},
+  {"id": 5, "name": "Eva Lopez", "department": "Design", "role": "UX Designer", "location": "Los Angeles", "skills": "Figma, user testing, design systems, accessibility", "years_exp": 4},
+  {"id": 6, "name": "Frank Patel", "department": "Engineering", "role": "Backend Engineer", "location": "Chicago", "skills": "Go, PostgreSQL, Redis, gRPC, microservices", "years_exp": 9},
+  {"id": 7, "name": "Grace Thompson", "department": "Data Science", "role": "Data Scientist", "location": "Boston", "skills": "R, Python, statistics, machine learning, Jupyter", "years_exp": 3},
+  {"id": 8, "name": "Henry Zhang", "department": "DevOps", "role": "Infrastructure Engineer", "location": "Denver", "skills": "Terraform, AWS, CI/CD, Docker, monitoring", "years_exp": 6},
+  {"id": 9, "name": "Iris Nakamura", "department": "Marketing", "role": "Growth Manager", "location": "San Francisco", "skills": "SEO, content strategy, A/B testing, analytics", "years_exp": 5},
+  {"id": 10, "name": "Jake Robinson", "department": "Engineering", "role": "Frontend Engineer", "location": "Remote", "skills": "React, TypeScript, CSS, performance optimization", "years_exp": 4},
+  {"id": 11, "name": "Karen Williams", "department": "Data Science", "role": "Senior Data Scientist", "location": "New York", "skills": "NLP, deep learning, Python, model deployment", "years_exp": 10},
+  {"id": 12, "name": "Leo Santos", "department": "Engineering", "role": "Platform Engineer", "location": "Austin", "skills": "Kubernetes, Helm, Kafka, distributed tracing", "years_exp": 7}
+]

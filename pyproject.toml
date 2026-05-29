@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "datapipe"
+version = "2.0.0"
+description = "Incremental multimodal indexing — Python + pandas + SQLite FTS5"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "pandas>=2.0",
+    "xxhash>=3.0",       # fast content fingerprinting
+    "watchdog>=4.0",     # real-time file watching (inotify / FSEvents)
+    "openpyxl>=3.1",     # Excel support
+]
+
+[project.optional-dependencies]
+full = [
+    "pypdf>=4.0",          # PDF parsing
+    "beautifulsoup4>=4.12", # HTML parsing
+    "python-docx>=1.1",    # DOCX parsing
+    "pytesseract>=0.3",    # Image OCR
+    "Pillow>=10.0",        # Image loading
+    "libcst>=1.4",         # Python AST parsing (richer than ast module)
+]
+dev = [
+    "pytest>=8",
+    "pytest-cov",
+]
+
+[project.scripts]
+datapipe = "datapipe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["datapipe*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["datapipe"]
+omit = ["tests/*"]
