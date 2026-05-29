@@ -15,24 +15,24 @@ Watches a directory of files (CSV, JSON, Markdown, Python, PDF, HTML, DOCX, imag
 
 ## What's new in v2 (upgrade from DeltaContext)
 
-| Feature | v1 (original) | v2 (this project) |
-|---|---|---|
-| Hashing | SHA-256 | **xxHash xxh64** (~10× faster) |
-| Delta computation | Set diff | **Pandas outer-merge** (same as DeltaContext) |
-| File watching | Polling thread | **watchdog** (inotify / FSEvents / kqueue) |
-| Parsers | Single `transforms.py` | **Plugin registry** — Strategy pattern |
-| Python files | Text chunking | **libcst AST-aware** chunking (class/func/doc) |
-| PDF / HTML / DOCX | ✗ | ✓ (optional deps, lazy-loaded) |
-| Image OCR | ✗ | ✓ Tesseract (optional) |
-| Session memory | ✗ | ✓ SQLite log + resume snapshots |
-| FTS5 stemming | porter ascii | **porter ascii** |
-| Tests | 22 | **43** |
+| Feature | v2 (this project) |
+|---|---|
+| Hashing | **xxHash xxh64** (~10× faster) |
+| Delta computation | **Pandas outer-merge** (same as DeltaContext) |
+| File watching |**watchdog** (inotify / FSEvents / kqueue) |
+| Parsers | **Plugin registry** — Strategy pattern |
+| Python files | **libcst AST-aware** chunking (class/func/doc) |
+| PDF / HTML / DOCX | ✓ (optional deps, lazy-loaded) |
+| Image OCR | ✓ Tesseract (optional) |
+| Session memory | ✓ SQLite log + resume snapshots |
+| FTS5 stemming | **porter ascii** |
+| Tests | **43** |
 
 ---
 
 ## Install
-
-```bash
+### Option A: Local Installation
+```Bash
 git clone https://github.com/your-handle/datapipe.git
 cd datapipe
 
@@ -42,9 +42,22 @@ source .venv/bin/activate
 # Core (CSV, JSON, Markdown, Python, Excel)
 pip install pandas xxhash watchdog openpyxl
 
+
 # Optional: richer parsing
 pip install pypdf beautifulsoup4 python-docx pytesseract Pillow libcst
 ```
+### Option B: Docker (Recommended for OCR)
+Docker provides a pre-configured environment with all system dependencies (like Tesseract OCR) and Python libraries ready to go.
+
+```Bash
+git clone https://github.com/your-handle/datapipe.git
+cd datapipe
+
+# Build and start the container in the background
+docker-compose up -d --build
+(When you are done working, you can stop the container with docker-compose down)
+```
+
 
 ---
 
